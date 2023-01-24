@@ -1,0 +1,53 @@
+@import '../../index.module.scss';
+.homeContainer{
+    background-color: $cor-primaria;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    img{
+        margin-top: 125px;
+        height:159px;
+        width:159px;
+        border-radius: 50%;
+    }
+    .untoggledBotao{
+        width:288px;
+        height:56px;
+        border-radius: 8px;
+        background-color: $cor-secundaria;
+        color:white;
+        font-size:23px;
+        font-weight: 400;
+        border: none;
+        position: absolute;
+        bottom:10px;
+    }
+    .secaoLoginEscolha{
+        margin-top: 69px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        h5{
+            height:35px;
+            margin-bottom: 5px;
+            font-size: 23px;
+            color: white;
+            text-align: center;
+        }
+        .toggledBotao{
+            width:288px;
+            height:56px;
+            border-radius: 8px;
+            background-color: $cor-secundaria;
+            color:white;
+            font-size:23px;
+            font-weight: 400;
+            border: none;
+            margin-bottom:16px;
+            
+        }
+        
+    }
+}

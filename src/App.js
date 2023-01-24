@@ -1,24 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
-
+import { Routes, Route } from 'react-router-dom'
+import { createContext, useState } from 'react'
+import Home from './pages/Home';
+import Login from './pages/Login'
+import styles from './index.module.scss'
+export const AuthContext = createContext(null);
 function App() {
+
+  const [usuario, setUsuario] = useState({ id: '', nome: '', email: '', role: '', token: '' })
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AuthContext.Provider value={{ usuario, setUsuario }}>
+      <div className={styles.App}>
+        <Routes>
+          <Route path='/:mesa' element={<Home />} />
+          <Route path='/login/:role' element={<Login />} />
+        </Routes>
+      </div>
+    </AuthContext.Provider>
   );
 }
 
